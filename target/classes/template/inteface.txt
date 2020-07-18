@@ -1,0 +1,32 @@
+package com.yx.web.[model].service;
+
+import com.yx.common.base.BaseService;
+import com.yx.web.[model].model.[entityClass];
+
+/**
+ * 
+ * @author
+ */
+
+public interface [entityClass]Service extends BaseService<[entityClass]>{
+
+	
+
+	
+	/**
+	 * 保存或更新
+	 * 
+	 * @param [entityClass]
+	 * @return
+	 */
+	public int save[entityClass]([entityClass] [entityClass]) ;
+	/**
+	 * 删除
+	* @param [entityClass]
+	* @return
+	 */
+	public int delete[entityClass]([entityClass] [entityClass]);
+
+	public PageInfo<[entityClass]> findPageInfo(Map<String, Object> params);
+
+}

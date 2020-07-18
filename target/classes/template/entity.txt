@@ -1,0 +1,25 @@
+package com.yx.web.[model].model;
+
+import java.util.Date;
+import java.math.BigDecimal;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
+import javax.persistence.Transient;
+import com.yx.common.base.BaseEntity;
+
+
+/**
+ *	[description]
+ */
+@SuppressWarnings({ "unused"})
+@Table(name="[tablename]")
+public class [entityClass] extends BaseEntity {
+
+	private static final long serialVersionUID = 1L;
+
+  		 [entitybuffer]
+
+}

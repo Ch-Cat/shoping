@@ -1,0 +1,74 @@
+<div class="tabbable">
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#home"> <i
+				class="green ace-icon fa fa-list-alt bigger-120"></i> 列表
+		</a></li>
+		@if(auth.hasPermission("goods:goods:add")){
+		<li class=""><a data-toggle="tab" href="#profile">
+		<i class="green ace-icon fa fa-plus bigger-120"></i> 添加
+		</a></li>
+		@}
+	</ul>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane active clearfix">
+			<form action="${ctxPath}/goods/list" method="post" id="search-form" target="list-page" class="clearfix">
+				
+				<div class="pull-left width-30">
+					<label></label>
+					
+				</div>
+				<div class="pull-left"><span  id="search-btn"></span></div>
+			</form>
+			<hr/>
+			<div id="list-page"></div>
+			<script type="text/javascript">
+				$("#search-form").getPageList({'submitBtnId':'search-btn'})
+			</script>
+		</div>
+
+		<div id="profile" class="tab-pane">
+			<form action="${ctxPath!}/goods/save" method="post" id="goods-save-form">
+								<div class="center padding-10">
+			<label>商品名称：</label>
+			<input type="text" class="width-50" name="goodsName" datatype="*"  nullmsg="请输入商品名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>商品描述：</label>
+			<input type="text" class="width-50" name="goodsSubtitle" datatype="*"  nullmsg="请输入商品副标题！"/>
+		</div>
+		
+		<div class="center padding-10">
+			<label>商品分类名称：</label>
+			<input type="text" class="width-50" name="gcName" datatype="*"  nullmsg="请输入商品分类名称！"/>
+		</div>
+		
+		
+		<div class="center padding-10">
+			<label>店铺名称：</label>
+			<input type="text" class="width-50" name="storeName" datatype="*"  nullmsg="请输入storeName！"/>
+		</div>
+		
+		
+		<div class="center padding-10">
+			<label>商品价格：</label>
+			<input type="text" class="width-50" name="goodsStorePrice" datatype="*"  nullmsg="请输入商品店铺价格！"/>
+		</div>
+		
+				<!-- <div class="center padding-10" >
+					<label style="vertical-align: top;">描述：</label>
+					<textarea type="text" class="width-50" name="description"></textarea>
+				</div> -->
+				<div class="margin-t15">
+					<span class="btn btn-info btn-block bigger-120" id="goods-save-btn">保 存</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+//日期框
+$('.date-picker').datepicker();
+</script>
+
+<#save isHide="yes" subBtnId="goods-save-btn" formId="goods-save-form" />

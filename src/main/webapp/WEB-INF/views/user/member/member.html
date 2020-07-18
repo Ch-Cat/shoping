@@ -1,0 +1,79 @@
+<div class="tabbable">
+	<ul class="nav nav-tabs" id="myTab">
+		<li class="active"><a data-toggle="tab" href="#home"> <i
+				class="green ace-icon fa fa-list-alt bigger-120"></i> 列表
+		</a></li>
+		@if(auth.hasPermission("user:member:add")){
+		<li class=""><a data-toggle="tab" href="#profile">
+		<i class="green ace-icon fa fa-plus bigger-120"></i> 添加
+		</a></li>
+		@}
+	</ul>
+
+	<div class="tab-content">
+		<div id="home" class="tab-pane active clearfix">
+			<form action="${ctxPath}/member/list" method="post" id="search-form" target="list-page" class="clearfix">
+				
+				<div class="pull-left width-30">
+					<label></label>
+					
+				</div>
+				<div class=""><span class="" id="search-btn"></span></div>
+			</form>
+			<hr/>
+			<div id="list-page"></div>
+			<script type="text/javascript">
+				$("#search-form").getPageList({'submitBtnId':'search-btn'})
+			</script>
+		</div>
+
+		<div id="profile" class="tab-pane">
+			<form action="${ctxPath!}/member/save" method="post" id="member-save-form">
+								<div class="center padding-10">
+			<label>用户名称：</label>
+			<input type="text" class="width-50" name="memberName" datatype="*"  nullmsg="请输入会员名称！"/>
+		</div>
+		<div class="center padding-10">
+			<label>真实姓名：</label>
+			<input type="text" class="width-50" name="memberTruename" datatype="*"  nullmsg="请输入真实姓名！"/>
+		</div>
+		
+		<div class="center padding-10">
+			<label>性别：</label>
+			<input type="text" class="width-50" name="memberSex" datatype="*"  nullmsg="请输入会员性别！"/>
+		</div>
+		<div class="center padding-10">
+			<label>生日：</label>
+			<input type="date" class="width-50" name="memberBirthday" datatype="*"  nullmsg="请输入生日！"/>
+		</div>
+		<div class="center padding-10">
+			<label>密码：</label>
+			<input type="text" class="width-50" name="memberPasswd" datatype="*"  nullmsg="请输入memberPasswd！"/>
+		</div>
+		<div class="center padding-10">
+			<label>邮箱：</label>
+			<input type="text" class="width-50" name="memberEmail" datatype="*"  nullmsg="请输入会员邮箱！"/>
+		</div>
+		<div class="center padding-10">
+			<label>手机号：</label>
+			<input type="text" class="width-50" name="memberQq" datatype="*"  nullmsg="请输入qq！"/>
+		</div>
+		
+
+				<!-- <div class="center padding-10" >
+					<label style="vertical-align: top;">描述：</label>
+					<textarea type="text" class="width-50" name="description"></textarea>
+				</div> -->
+				<div class="margin-t15">
+					<span class="btn btn-info btn-block bigger-120" id="member-save-btn">保 存</span>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+//日期框
+$('.date-picker').datepicker();
+</script>
+
+<#save isHide="yes" subBtnId="member-save-btn" formId="member-save-form" />

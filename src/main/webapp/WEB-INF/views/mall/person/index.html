@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+
+		<title>个人中心</title>
+
+		<link href="${ctxPath}/static/mall/AmazeUI-2.4.2/assets/css/admin.css" rel="stylesheet" type="text/css">
+		<link href="${ctxPath}/static/mall/AmazeUI-2.4.2/assets/css/amazeui.css" rel="stylesheet" type="text/css">
+		<link href="${ctxPath}/static/mall/css/personal.css" rel="stylesheet" type="text/css">
+		<link href="${ctxPath}/static/mall/css/vipstyle.css" rel="stylesheet" type="text/css">
+		<script src="${ctxPath}/static/mall/AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+		<script src="${ctxPath}/static/mall/AmazeUI-2.4.2/assets/js/amazeui.js"></script>
+	</head>
+
+	<body>
+		<!--头 -->
+		@layout("/mall/layout/mallHeader.html"){}
+		<b class="line"></b>
+		<div class="center">
+			<div class="col-main">
+				<div class="main-wrap">
+					<div class="wrap-left">
+						<div class="wrap-list">
+							<div class="m-user">
+								<!--个人信息 -->
+
+								<div class="m-userinfo">
+									<a href="news.html">
+										<div class="tipsBox"><i class="am-icon-envelope"></i></div>
+									</a>
+									<div class="m-baseinfo">
+										<a class="m-pic" href="${ctxPath}/person/information">
+											<img src="${ctxPath}/static/mall/images/getAvatar.do.jpg">
+										</a>
+										<div class="m-info">
+											<em class="s-name">${member.memberName!}</em>
+											
+										</div>
+									</div>
+									<div class="m-right">
+										<div class="m-new">
+											<a href="${ctxPath}/person/news"><i class="am-icon-dropbox  am-icon-md" style="padding-right:5px ;"></i>消息盒子</a>
+										</div>
+
+									</div>
+								</div>
+
+								<!--个人资产-->
+								<div class="m-userproperty">
+									<div class="s-bar">
+										<i class="s-icon"></i>个人用户
+									</div>
+									<p class="m-coupon">
+										<a href="coupon.html">
+											<em class="m-num">${member.memberTruename!}</em>
+											<span class="m-title">姓名</span>
+										</a>
+									</p>
+									<p class="m-wallet">
+										<a href="wallet.html">
+											<em class="m-num">${member.memberSex!}</em>
+											<span class="m-title">性别</span>
+										</a>
+									</p>
+									<p class="m-bill">
+										<a href="pointnew.html">
+											<em class="m-num">${member.memberQq!}</em>
+											<span class="m-title">电话</span>
+										</a>
+									</p>
+								</div>
+
+								<!--我的钱包-->
+								<div class="wallet">
+									
+									<p class="m-big squareS">
+										<a href="${ctxPath}/front/cartList">
+											<i><img src="${ctxPath}/static/mall/images/shopping.png"/></i>
+											<span class="m-title">能购物</span>
+										</a>
+									</p>
+									<p class="m-big squareA">
+										<a href="#">
+											<i><img src="${ctxPath}/static/mall/images/safe.png"/></i>
+											<span class="m-title">够安全</span>
+										</a>
+									</p>
+									<p class="m-big squareL">
+										<a href="#">
+											<i><img src="${ctxPath}/static/mall/images/profit.png"/></i>
+											<span class="m-title">很灵活</span>
+										</a>
+									</p>
+								</div>
+
+							</div>
+							<div class="box-container-bottom"></div>
+
+						</div>
+					</div>
+					<div class="wrap-right">
+
+						<!-- 日历-->
+						<div class="day-list">
+							<div class="s-title">
+								每日新鲜事
+							</div>
+							<div class="s-box">
+								<ul>
+									<li><a><p>粮油冲锋周 满128减18</p></a></li>
+									<li><a><p>防晒这么重要的事怎能随意</p></a></li>
+									<li><a><p>春日护肤面膜不可少，你选对了吗？</p></a></li>
+									<li><a><p>纯粹时尚，摩登出游，吸睛美衣</p></a></li>
+									<li><a><p>粮油冲锋周 满128减18</p></a></li>
+									<li><a><p>春日护肤面膜不可少，你选对了吗？</p></a></li>									
+								</ul>
+							</div>
+						</div>			
+     				</div>
+     				<div class="clear"></div>
+     		
+				</div>
+				<!--底部-->
+				@layout("/mall/layout/mallFooter.html"){}
+				
+		</div>
+		<!--引导 -->
+		<div class="navCir">
+			<li><a href="${ctxPath}/static/mall/home/home2.html"><i class="am-icon-home "></i>首页</a></li>
+			<li><a href="${ctxPath}/static/mall/home/sort.html"><i class="am-icon-list"></i>分类</a></li>
+			<li><a href="${ctxPath}/static/mall/home/shopcart.html"><i class="am-icon-shopping-basket"></i>购物车</a></li>
+			<li class="active"><a href="index.html"><i class="am-icon-user"></i>我的</a></li>
+		</div>
+	</body>
+
+</html>
